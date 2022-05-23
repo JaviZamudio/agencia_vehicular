@@ -89,11 +89,16 @@
         Valor
         <input type="text" name="Valor" id="Valor" required><br>
         Atributo:
-        <input type="radio" name="Atributo" id="Atributo" value="IdPropietario" checked>IdPropietario
-        <input type="radio" name="Atributo" id="Atributo" value="Nombre">Nombre
-        <input type="radio" name="Atributo" id="Atributo" value="RFC">RFC
-        <input type="radio" name="Atributo" id="Atributo" value="Localidad">Localidad
-        <input type="radio" name="Atributo" id="Atributo" value="Municipio">Municipio
+        <input type="radio" name="Atributo" id="Atributo" value="IdAuto" checked>IdPropietario
+        <input type="radio" name="Atributo" id="Atributo" value="NumeroSerie">Nombre
+        <input type="radio" name="Atributo" id="Atributo" value="Modelo">RFC
+        <input type="radio" name="Atributo" id="Atributo" value="Marca">Localidad
+        <input type="radio" name="Atributo" id="Atributo" value="Motor">Municipio
+        <input type="radio" name="Atributo" id="Atributo" value="Carrocecía">RFC
+        <input type="radio" name="Atributo" id="Atributo" value="CaballosFuerza">Localidad
+        <input type="radio" name="Atributo" id="Atributo" value="Puertas">Municipio
+        <input type="radio" name="Atributo" id="Atributo" value="Cilindros">Localidad
+        <input type="radio" name="Atributo" id="Atributo" value="Combustible">Municipio
         <br>
         <input type="submit">
     <form>
@@ -104,26 +109,37 @@
         $Atributo=$_GET['Atributo'];
         include("Conexion.php");
         $Con=Conectar();
-        $SQL="SELECT * FROM propietarios WHERE $Atributo LIKE '%$Valor%';";
+        $SQL="SELECT * FROM Autos WHERE $Atributo LIKE '%$Valor%';";
         $Result=Ejecutar($Con,$SQL);
         
         ///Crear Tabla
         echo '<table border=1><tr>';
-        echo '<th>'.'IdPropietario'.'</th>';
-        echo '<th>'.'Nombre'.'</th>';
-        echo '<th>'.'RFC'.'</th>';
-        echo '<th>'.'Localidad'.'</th>';
-        echo '<th>'.'Municipio'.'</th>';
+        echo '<th>'.'IdAuto'.'</th>';
+        echo '<th>'.'NumeroSerie'.'</th>';
+        echo '<th>'.'Modelo'.'</th>';
+        echo '<th>'.'Marca'.'</th>';
+        echo '<th>'.'Motor'.'</th>';
+        echo '<th>'.'Carrocecía'.'</th>';
+        echo '<th>'.'CaballosFuerza'.'</th>';
+        echo '<th>'.'Puertas'.'</th>';
+        echo '<th>'.'Cilindros'.'</th>';
+        echo '<th>'.'Combustible'.'</th>';
+        echo '<th>'.'Precio'.'</th>';
         echo '</tr>';
         for($F = 0; $F < mysqli_num_rows($Result); $F++)
         {
             $Fila=mysqli_fetch_row($Result);
             echo '<tr>';
             echo '<td>'.$Fila[0].'</td>';
-            echo '<td>'.$Fila[1].'</td>';
             echo '<td>'.$Fila[2].'</td>';
             echo '<td>'.$Fila[3].'</td>';
             echo '<td>'.$Fila[4].'</td>';
+            echo '<td>'.$Fila[5].'</td>'; 
+            echo '<td>'.$Fila[6].'</td>';
+            echo '<td>'.$Fila[7].'</td>';
+            echo '<td>'.$Fila[8].'</td>';
+            echo '<td>'.$Fila[9].'</td>';
+            echo '<td>'.$Fila[10].'</td>';
             echo '<td>'.'<a href="DPropietarios.php?Numero='.$Fila[0].'">Elimina</a>'.'</td>';
             echo '<td>'.'<a href="UPropietarios.php?Numero='.$Fila[0].'">Actualizar</a>'.'</td>';
             echo '</tr>';
