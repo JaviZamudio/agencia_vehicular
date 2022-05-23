@@ -113,6 +113,8 @@
         echo '<th>'.'Asientos'.'</th>';
         echo '<th>'.'Transmision'.'</th>';
         echo '<th>'.'Precio'.'</th>';
+        echo '<th>'.'Eliminar'.'</th>';
+        echo '<th>'.'Actualizar'.'</th>';
 
         echo '</tr>';
         for($F = 0; $F < mysqli_num_rows($Result); $F++)
@@ -120,10 +122,11 @@
             $Fila=mysqli_fetch_row($Result);
             echo '<tr>';
             echo '<td>'.$Fila[0].'</td>';
+            echo '<td>'.$Fila[1].'</td>';
             echo '<td>'.$Fila[2].'</td>';
             echo '<td>'.$Fila[3].'</td>';
-            echo '<td>'.$Fila[4].'</td>';
-            echo '<td>'.$Fila[5].'</td>'; 
+            echo '<td>'.$Fila[4].'</td>'; 
+            echo '<td>'.$Fila[5].'</td>';
             echo '<td>'.$Fila[6].'</td>';
             echo '<td>'.$Fila[7].'</td>';
             echo '<td>'.$Fila[8].'</td>';
