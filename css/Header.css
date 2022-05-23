@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    --header-height: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header{
+    background-color: #084364;
+    color: white;
+
+    padding: 0px 30px;
+    height: var(--header-height);
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-title{
+    display: flex;
+    align-items: center;
+}
+
+.header-title img{
+    height: 60px;
+    margin-right: 20px;
+}
+
+.nav{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
