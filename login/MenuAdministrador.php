@@ -65,10 +65,10 @@
 	<body>
 		<div id="header">
 			<ul class="nav">
-				<li><a href="">Multas</a>
+				<li><a href="">Taller</a>
                     <ul>
-						<li><a href=FMultas.html?>Alta</a></li>
-                        <li><a href=CMultas.php?>Modificar</a></li>
+						<li><a href="..\\Taller\\CitasTaller.php">Citas</a></li>
+                        <li><a href="..\\Taller\\InvTaller.php">Inventario</a></li>
                     </ul>
 
                 <li><a href="">Propietarios</a>
