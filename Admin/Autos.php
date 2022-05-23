@@ -83,8 +83,56 @@
                     </ul>
 			</ul>
 		</div>
-        
+        <br><br><br>
         <div>
+        <form method="get">
+        Valor
+        <input type="text" name="Valor" id="Valor" required><br>
+        Atributo:
+        <input type="radio" name="Atributo" id="Atributo" value="IdPropietario" checked>IdPropietario
+        <input type="radio" name="Atributo" id="Atributo" value="Nombre">Nombre
+        <input type="radio" name="Atributo" id="Atributo" value="RFC">RFC
+        <input type="radio" name="Atributo" id="Atributo" value="Localidad">Localidad
+        <input type="radio" name="Atributo" id="Atributo" value="Municipio">Municipio
+        <br>
+        <input type="submit">
+    <form>
+
+<?php
+    if(isset($_GET['Valor'])){
+        $Valor=$_GET['Valor'];
+        $Atributo=$_GET['Atributo'];
+        include("Conexion.php");
+        $Con=Conectar();
+        $SQL="SELECT * FROM propietarios WHERE $Atributo LIKE '%$Valor%';";
+        $Result=Ejecutar($Con,$SQL);
+        
+        ///Crear Tabla
+        echo '<table border=1><tr>';
+        echo '<th>'.'IdPropietario'.'</th>';
+        echo '<th>'.'Nombre'.'</th>';
+        echo '<th>'.'RFC'.'</th>';
+        echo '<th>'.'Localidad'.'</th>';
+        echo '<th>'.'Municipio'.'</th>';
+        echo '</tr>';
+        for($F = 0; $F < mysqli_num_rows($Result); $F++)
+        {
+            $Fila=mysqli_fetch_row($Result);
+            echo '<tr>';
+            echo '<td>'.$Fila[0].'</td>';
+            echo '<td>'.$Fila[1].'</td>';
+            echo '<td>'.$Fila[2].'</td>';
+            echo '<td>'.$Fila[3].'</td>';
+            echo '<td>'.$Fila[4].'</td>';
+            echo '<td>'.'<a href="DPropietarios.php?Numero='.$Fila[0].'">Elimina</a>'.'</td>';
+            echo '<td>'.'<a href="UPropietarios.php?Numero='.$Fila[0].'">Actualizar</a>'.'</td>';
+            echo '</tr>';
+        }
+        echo '</table>';
+        Cerrar($Con);    
+    }
+
+?>
 
         </div>
 	</body>
