@@ -21,7 +21,7 @@
                         //redirigir a ./MenuAdministrador.php
                         header("Location: ./MenuAdministrador.php");
                     }else if($Fila[4]=='U'){
-                        $_SESSION['BanderaA']=1;
+                        $_SESSION['Bandera']=1;
                         $_SESSION["Usuario"]=$Usuario;
                         $_SESSION["Tipo"] = $Fila[4];
                         //redirigir a ./MenuUsuario.php
@@ -29,7 +29,7 @@
                     }
                     //para 'Taller'
                     else if($Fila[4]=='T'){
-                        $_SESSION['BanderaT']=1;
+                        $_SESSION['Bandera']=1;
                         $_SESSION["Usuario"]=$Usuario;
                         $_SESSION["Tipo"] = $Fila[4];
                         //redirigir a ./MenuTaller.php

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(isset($_SESSION['Bandera']) && $_SESSION['Bandera']==1 && $_SESSION['Bandera']=="A"){
+    if(isset($_SESSION['Bandera']) && $_SESSION['Bandera']==1 && $_SESSION['Tipo']=="A"){
 ?>
 <html> 
 <link rel="stylesheet" href="styles/style.css" type="text/css">
@@ -89,9 +89,9 @@
         </div>
 <?php
         
-        include("Conexion.php");
+        include("./Conexiones.php");
         $Con=Conectar();
-        $SQL="SELECT * FROM Vehiculos WHERE $Atributo LIKE '%$Valor%';";
+        $SQL="SELECT * FROM Vehiculos";
         $Result=Ejecutar($Con,$SQL);
         
         ///Crear Tabla
@@ -142,6 +142,7 @@
         echo '</table>';
         Cerrar($Con);    
     }else{
+        // echo "<script>alert($_SESSION[''])</script>"
         header("Location: ../login/FAcceso.html");
     }
 
