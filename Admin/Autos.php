@@ -85,23 +85,6 @@
 		</div>
         <br><br><br>
         <div>
-        <form method="get">
-        Valor
-        <input type="text" name="Valor" id="Valor" required><br>
-        Atributo:
-        <input type="radio" name="Atributo" id="Atributo" value="IdAuto" checked>IdPropietario
-        <input type="radio" name="Atributo" id="Atributo" value="NumeroSerie">Nombre
-        <input type="radio" name="Atributo" id="Atributo" value="Modelo">RFC
-        <input type="radio" name="Atributo" id="Atributo" value="Marca">Localidad
-        <input type="radio" name="Atributo" id="Atributo" value="Motor">Municipio
-        <input type="radio" name="Atributo" id="Atributo" value="Carrocecía">RFC
-        <input type="radio" name="Atributo" id="Atributo" value="CaballosFuerza">Localidad
-        <input type="radio" name="Atributo" id="Atributo" value="Puertas">Municipio
-        <input type="radio" name="Atributo" id="Atributo" value="Cilindros">Localidad
-        <input type="radio" name="Atributo" id="Atributo" value="Combustible">Municipio
-        <br>
-        <input type="submit">
-    <form>
 
 <?php
     if(isset($_GET['Valor'])){
@@ -109,22 +92,29 @@
         $Atributo=$_GET['Atributo'];
         include("Conexion.php");
         $Con=Conectar();
-        $SQL="SELECT * FROM Autos WHERE $Atributo LIKE '%$Valor%';";
+        $SQL="SELECT * FROM Vehiculos WHERE $Atributo LIKE '%$Valor%';";
         $Result=Ejecutar($Con,$SQL);
         
         ///Crear Tabla
         echo '<table border=1><tr>';
-        echo '<th>'.'IdAuto'.'</th>';
-        echo '<th>'.'NumeroSerie'.'</th>';
-        echo '<th>'.'Modelo'.'</th>';
+        echo '<th>'.'Id'.'</th>';
+        echo '<th>'.'Imagen'.'</th>';
         echo '<th>'.'Marca'.'</th>';
-        echo '<th>'.'Motor'.'</th>';
-        echo '<th>'.'Carrocecía'.'</th>';
-        echo '<th>'.'CaballosFuerza'.'</th>';
-        echo '<th>'.'Puertas'.'</th>';
-        echo '<th>'.'Cilindros'.'</th>';
+        echo '<th>'.'Linea'.'</th>';
+        echo '<th>'.'Clase'.'</th>';
+        echo '<th>'.'Modelo'.'</th>';
+        echo '<th>'.'NumSerie'.'</th>';
+        echo '<th>'.'Tipo'.'</th>';
+        echo '<th>'.'Capacidad'.'</th>';
         echo '<th>'.'Combustible'.'</th>';
+        echo '<th>'.'Origen'.'</th>';
+        echo '<th>'.'Color'.'</th>';
+        echo '<th>'.'Cilindros'.'</th>';
+        echo '<th>'.'Puertas'.'</th>';
+        echo '<th>'.'Asientos'.'</th>';
+        echo '<th>'.'Transmision'.'</th>';
         echo '<th>'.'Precio'.'</th>';
+
         echo '</tr>';
         for($F = 0; $F < mysqli_num_rows($Result); $F++)
         {
@@ -140,6 +130,12 @@
             echo '<td>'.$Fila[8].'</td>';
             echo '<td>'.$Fila[9].'</td>';
             echo '<td>'.$Fila[10].'</td>';
+            echo '<td>'.$Fila[11].'</td>';
+            echo '<td>'.$Fila[12].'</td>';
+            echo '<td>'.$Fila[13].'</td>';
+            echo '<td>'.$Fila[14].'</td>';
+            echo '<td>'.$Fila[15].'</td>';
+            echo '<td>'.$Fila[16].'</td>';
             echo '<td>'.'<a href="DPropietarios.php?Numero='.$Fila[0].'">Elimina</a>'.'</td>';
             echo '<td>'.'<a href="UPropietarios.php?Numero='.$Fila[0].'">Actualizar</a>'.'</td>';
             echo '</tr>';
