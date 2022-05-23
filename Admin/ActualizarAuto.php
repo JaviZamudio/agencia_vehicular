@@ -39,24 +39,22 @@
             "<table border = 1>
                 <tr>
                     <th>Id</th>
+                    <th>Imagen</th>
                     <th>Marca</th>
                     <th>Linea</th>
                     <th>Clase</th>
                     <th>Modelo</th>
-                    <th>NumMotor</th>
-                    <th>NIV</th>
+                    <th>NumSerier</th>
                     <th>Tipo</th>
                     <th>Capacidad</th>
-                    <th>Uso</th>
                     <th>Combustible</th>
                     <th>Origen</th>
-                    <th>Placa</th>
-                    <th>Sublinea</th>
                     <th>Color</th>
                     <th>Cilindros</th>
                     <th>Puertas</th>
                     <th>Asientos</th>
                     <th>Transmision</th>
+                    <th>Precio</th>
 
 
                 </tr>"
@@ -83,8 +81,6 @@
                     <td>$Fila[14]</td>
                     <td>$Fila[15]</td>
                     <td>$Fila[16]</td>
-                    <td>$Fila[17]</td>
-                    <td>$Fila[18]</td>
                 </tr>"
             );
         }
