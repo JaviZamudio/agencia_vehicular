@@ -67,19 +67,19 @@
 			<ul class="nav">
 				<li><a href="">Taller</a>
                     <ul>
-						<li><a href="..\\Taller\\AdminCitasTaller.php">Citas</a></li>
-                        <li><a href="..\\Taller\\AdminInvTaller.php">Inventario</a></li>
+						<li><a href="../Taller/AdminCitasTaller.php">Citas</a></li>
+                        <li><a href="../Taller/AdminInvTaller.php">Inventario</a></li>
                     </ul>
 
                 <li><a href="">Registros</a>
                     <ul>
-						<li><a href="..\\Admin\\Autos.php">Autos</a></li>
-                        <li><a href="..\\Admin\\Empleados.php">Empleados</a></li>
+						<li><a href="../Admin/Autos.php">Autos</a></li>
+                        <li><a href="../Admin/Empleados.php">Empleados</a></li>
                     </ul>
                 <li><a href="">Ventas</a>
                     <ul>
-						<li><a href="..\\Ventas\\AdminVentas.php">Lista de Ventas</a></li>
-                        <li><a href="..\\Ventas\\AdminRegistrarVentas.php">Nueva Venta</a></li>
+						<li><a href="../Ventas/AdminVentas.php">Lista de Ventas</a></li>
+                        <li><a href="../Ventas/AdminRegistrarVentas.php">Nueva Venta</a></li>
                     </ul>
 			</ul>
 		</div>

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(isset($_SESSION['Bandera'])){
+    if(isset($_SESSION['Bandera']) && $_SESSION['Bandera']==1 && $_SESSION['Bandera']=="A"){
 ?>
 <html> 
 <link rel="stylesheet" href="styles/style.css" type="text/css">
@@ -67,29 +67,28 @@
 			<ul class="nav">
 				<li><a href="">Taller</a>
                     <ul>
-						<li><a href="..\\Taller\\AdminCitasTaller.php">Citas</a></li>
-                        <li><a href="..\\Taller\\AdminInvTaller.php">Inventario</a></li>
+						<li><a href="../Taller/AdminCitasTaller.php">Citas</a></li>
+                        <li><a href="../Taller/AdminInvTaller.php">Inventario</a></li>
                     </ul>
 
                 <li><a href="">Registros</a>
                     <ul>
-						<li><a href="..\\Admin\\Autos.php">Autos</a></li>
-                        <li><a href="..\\Admin\\Empleados.php">Empleados</a></li>
+						<li><a href="../Admin/Autos.php">Autos</a></li>
+                        <li><a href="../Admin/Empleados.php">Empleados</a></li>
                     </ul>
                 <li><a href="">Ventas</a>
                     <ul>
-						<li><a href="..\\Ventas\\AdminVentas.php">Lista de Ventas</a></li>
-                        <li><a href="..\\Ventas\\AdminRegistrarVentas.php">Nueva Venta</a></li>
+						<li><a href="../Ventas/AdminVentas.php">Lista de Ventas</a></li>
+                        <li><a href="../Ventas/AdminRegistrarVentas.php">Nueva Venta</a></li>
                     </ul>
 			</ul>
 		</div>
         <br><br><br>
         <div>
 
+        </div>
 <?php
-    if(isset($_GET['Valor'])){
-        $Valor=$_GET['Valor'];
-        $Atributo=$_GET['Atributo'];
+        
         include("Conexion.php");
         $Con=Conectar();
         $SQL="SELECT * FROM Vehiculos WHERE $Atributo LIKE '%$Valor%';";
@@ -142,6 +141,8 @@
         }
         echo '</table>';
         Cerrar($Con);    
+    }else{
+        header("Location: ../login/FAcceso.html");
     }
 
 ?>
@@ -149,9 +150,3 @@
         </div>
 	</body>
 </html>
-
-<?php
-    }else{
-        print('<META HTTP-EQUIV="REFRESH" CONTENT="1;URL=FAcceso.html"></head>');
-    }
-?>
