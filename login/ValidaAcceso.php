@@ -16,12 +16,25 @@
             print("CONTRASEÑA CORRECTA");
                     if($Fila[4]=='A'){
                         $_SESSION['Bandera']=1;
-                        print('<META HTTP-EQUIV="REFRESH" CONTENT="1;URL=MenuAdministrador.php"></head>');
-                    }else{
+                        $_SESSION['Usuario']=$Usuario;
+                        $_SESSION['Tipo']=$Fila[4];
+                        //redirigir a ./MenuAdministrador.php
+                        header("Location: ./MenuAdministrador.php");
+                    }else if($Fila[4]=='U'){
                         $_SESSION['BanderaA']=1;
-                        print('<META HTTP-EQUIV="REFRESH" CONTENT="1;URL=MenuUsuario.php"></head>');
+                        $_SESSION["Usuario"]=$Usuario;
+                        $_SESSION["Tipo"] = $Fila[4];
+                        //redirigir a ./MenuUsuario.php
+                        header("Location: ./MenuUsuario.php");
                     }
-            
+                    //para 'Taller'
+                    else if($Fila[4]=='T'){
+                        $_SESSION['BanderaT']=1;
+                        $_SESSION["Usuario"]=$Usuario;
+                        $_SESSION["Tipo"] = $Fila[4];
+                        //redirigir a ./MenuTaller.php
+                        header("Location: ./MenuTaller.php");
+                    }
         }else{
             print("CONTRASEÑA INCORRECTA");
             }
