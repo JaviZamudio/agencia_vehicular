@@ -1,14 +1,9 @@
-<?php
-    session_start();
-    if(!isset($_SESSION['Bandera'])){
-		header("Location: ./FAcceso.html");
-	}
-?>
-<html> 
-    <head>
+<html>
+	<head>
 		<link rel="stylesheet" href="styles/style.css" type="text/css">
 		<link rel="stylesheet" href="../css/Header.css">
 	</head>
+
 	<body>
 		<div class="header">
 			<div class="header-title">	
@@ -41,10 +36,43 @@
 					<div class="dropdown-content">
 						<a href="../Admin/FVehiculos.html" class="dropdown-link">Agregar Autos</a>
                         <a href="../Admin/Autos.php" class="dropdown-link">Modificar Autos</a>
-                        <a href="../Admin/FUsuarios.html" class="dropdown-link">Empleados</a>
+                        <a href="../Admin/FUsuarios.html" class="dropdown-link">Agrear Usuario</a>
 					</div>
 				</div>
 			</nav>
 		</div>
 	</body>
+
+<form method="post" action="IUsuarios.php">
+	<label>FORMULARIO DE USUARIOS</label>
+	<p></p>
+
+	<label>Id</label>
+	<input type="number" id="Id" required="required" name="Id" value=""></input>
+	<br>
+	<label>Usuario</label>
+	<input type="text" id="Usuario" required="required" name="Usuario"></input>
+	<br>
+	<label>Password</label>
+	<input type="text" id="Password" required="required" name="Password"></input>
+	<br>
+	<label>Nombre</label>
+	<input type="text" id="Nombre" required="required" name="Nombre"></input>
+	<br>
+	<label>Tipo Usuario</label>
+	<select name="TipoUsuario" id="TipoUsuario" required="required">
+		<option value="A">A</option>
+		<option value="U">U</option>
+		<option value="T">T</option>
+	</select>
+	<br>
+	<label>Correo</label>
+	<input type="text" id="Correo" required="required" name="Correo"></input>
+	<br>
+	<label>NumTelefono</label>
+	<input type="text" id="NumTelefono" required="required" name="NumTelefono"></input>
+
+	<input type="submit">
+
+</form>
 </html>
