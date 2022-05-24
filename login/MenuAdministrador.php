@@ -39,7 +39,8 @@
 						Registros
 					</div>
 					<div class="dropdown-content">
-                        <a href="../Admin/Autos.php">Autos</a>
+					    <a href="../Admin/FVehiculos.html">Agregar Autos</a>
+                        <a href="../Admin/Autos.php">Modificar Autos</a>
                         <a href="../Admin/Empleados.php">Empleados</a>
 					</div>
 				</div>

@@ -1,5 +1,5 @@
 <?php
-    $Id=$GET['Id'];
+    $Id=$_GET['Id'];
 
     include("Conexiones.php");
     $Con=Conectar();
