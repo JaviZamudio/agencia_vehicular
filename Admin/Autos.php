@@ -6,6 +6,9 @@
 <link rel="stylesheet" href="styles/style.css" type="text/css">
     <label></label>
     <head>
+
+    <link rel="stylesheet" href="../css/Header.css">
+
 		<title></title>
 		<style type="text/css">
 			
@@ -63,25 +66,40 @@
 		</style>
 	</head>
 	<body>
-		<div id="header">
-			<ul class="nav">
-				<li><a href="">Taller</a>
-                    <ul>
-						<li><a href="../Taller/AdminCitasTaller.php">Citas</a></li>
-                        <li><a href="../Taller/AdminInvTaller.php">Inventario</a></li>
-                    </ul>
-
-                <li><a href="">Registros</a>
-                    <ul>
-						<li><a href="../Admin/Autos.php">Autos</a></li>
-                        <li><a href="../Admin/Empleados.php">Empleados</a></li>
-                    </ul>
-                <li><a href="">Ventas</a>
-                    <ul>
-						<li><a href="../Ventas/AdminVentas.php">Lista de Ventas</a></li>
-                        <li><a href="../Ventas/AdminRegistrarVentas.php">Nueva Venta</a></li>
-                    </ul>
-			</ul>
+		<div class="header">
+			<div class="header-title">	
+				<img src="../images/logo.png" alt="">
+				<h1>Agencia Vehicular</h1>
+			</div>
+			<nav class="nav">
+				<div class="dropdown">
+					<div class="dropdown-title">
+						Taller
+					</div>
+					<div class="dropdown-content">
+						<a href="../Taller/AdminCitasTalller.php" class="dropdown-link">Citas</a>
+						<a href="../Taller/AdminInvTaller.php" class="dropdown-link">Inventario</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<div class="dropdown-title">
+						Ventas
+					</div>
+					<div class="dropdown-content">
+                        <a href="../Ventas/AdminVentas.php">Lista de Ventas</a>
+                        <a href="../Ventas/AdminRegistrarVentas.php">Nueva Venta</a>
+					</div>
+				</div>
+				<div class="dropdown">
+					<div class="dropdown-title">
+						Registros
+					</div>
+					<div class="dropdown-content">
+                        <a href="../Admin/Autos.php">Autos</a>
+                        <a href="../Admin/Empleados.php">Empleados</a>
+					</div>
+				</div>
+			</nav>
 		</div>
         <br><br><br>
         <div>
@@ -138,8 +156,8 @@
             echo '<td>'.$Fila[14].'</td>';
             echo '<td>'.$Fila[15].'</td>';
             echo '<td>'.$Fila[16].'</td>';
-            echo '<td>'.'<a href="DPropietarios.php?Numero='.$Fila[0].'">Elimina</a>'.'</td>';
-            echo '<td>'.'<a href="UPropietarios.php?Numero='.$Fila[0].'">Actualizar</a>'.'</td>';
+            echo '<td>'.'<a href="EliminarAuto.php?Id='.$Fila[0].'">Elimina</a>'.'</td>';
+            echo '<td>'.'<a href="ActualizarAuto.php?Id='.$Fila[0].'">Actualizar</a>'.'</td>';
             echo '</tr>';
         }
         echo '</table>';
