@@ -1,0 +1,8 @@
+Falta:
+    ventas para admin y usuario
+    - menu de inventario para Taller
+    - Citas para Admin y Taller
+
+    - Autenticacion en cada pagina
+    - Header en cada pagina
+    - Modificar Header en cada Menú
