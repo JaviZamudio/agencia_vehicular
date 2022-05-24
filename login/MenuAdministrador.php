@@ -1,8 +1,8 @@
 <?php
     session_start();
-    if(!isset($_SESSION['Bandera'])){
-		header("Location: ./FAcceso.html");
-	}
+    if(!isset($_SESSION['Bandera']) || $_SESSION['Bandera']!=1 || $_SESSION['Tipo']!='A'){
+        header("Location: ./Login.php");
+    }
 ?>
 <html> 
     <head>
