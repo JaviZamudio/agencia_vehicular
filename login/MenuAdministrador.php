@@ -30,8 +30,8 @@
 						Ventas
 					</div>
 					<div class="dropdown-content">
-                        <a href="../Ventas/AdminVentas.php">Lista de Ventas</a>
-                        <a href="../Ventas/AdminRegistrarVentas.php">Nueva Venta</a>
+                        <a href="../Ventas/AdminVentas.php" class="dropdown-link">Lista de Ventas</a>
+                        <a href="../Ventas/AdminRegistrarVentas.php" class="dropdown-link">Nueva Venta</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -39,8 +39,8 @@
 						Registros
 					</div>
 					<div class="dropdown-content">
-                        <a href="../Admin/Autos.php">Autos</a>
-                        <a href="../Admin/Empleados.php">Empleados</a>
+                        <a href="../Admin/Autos.php" class="dropdown-link">Autos</a>
+                        <a href="../Admin/Empleados.php" class="dropdown-link">Empleados</a>
 					</div>
 				</div>
 			</nav>
