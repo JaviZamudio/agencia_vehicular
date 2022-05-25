@@ -113,8 +113,8 @@
             echo '<td>'.$Fila[2].'</td>';
             echo '<td>'.$Fila[3].'</td>';
             echo '<td>'.$Fila[4].'</td>'; 
-            echo '<td>'.'<a href="DPropietarios.php?Numero='.$Fila[0].'">Elimina</a>'.'</td>';
-            echo '<td>'.'<a href="UPropietarios.php?Numero='.$Fila[0].'">Actualizar</a>'.'</td>';
+            echo '<td>'.'<a href="EliminarInventario.php?Numero='.$Fila[0].'">Elimina</a>'.'</td>';
+            echo '<td>'.'<a href="ActualizarInventario.php?Numero='.$Fila[0].'">Actualizar</a>'.'</td>';
             echo '</tr>';
         }
         echo '</table>';
