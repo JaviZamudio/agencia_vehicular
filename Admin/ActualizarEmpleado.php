@@ -22,20 +22,17 @@
 	<label>Password</label>
 	<input type="text" id="Password" value="<?php print($Fila[2]); ?>" required="required" name="Password"></input>
 	
-	<label>Linea</label>
-	<input type="text" id="Linea" value="<?php print($Fila[3]); ?>" required="required" name="Linea"></input>
-	
 	<label>Nombre</label>
-	<input type="text" id="Nombre" value="<?php print($Fila[4]); ?>" required="required" name="Nombre"></input>
+	<input type="text" id="Nombre" value="<?php print($Fila[3]); ?>" required="required" name="Nombre"></input>
 	
 	<label>TipoUsuario</label>
-	<input type="text" id="TipoUsuario" value="<?php print($Fila[5]); ?>" required="required" name="TipoUsuario"></input>
+	<input type="text" id="TipoUsuario" value="<?php print($Fila[4]); ?>" required="required" name="TipoUsuario"></input>
 	
 	<label>Correo</label>
-	<input type="text" id="Correo" value="<?php print($Fila[6]); ?>" required="required" name="Correo"></input>
+	<input type="text" id="Correo" value="<?php print($Fila[5]); ?>" required="required" name="Correo"></input>
 	
 	<label>NumTelefono</label>
-	<input type="number" id="NumTelefono" value="<?php print($Fila[7]); ?>" required="required" name="NumTelefono"></input>
+	<input type="number" id="NumTelefono" value="<?php print($Fila[6]); ?>" required="required" name="NumTelefono"></input>
 
 	<input type="submit">
 
