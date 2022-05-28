@@ -7,7 +7,7 @@
         
         include("./Conexiones.php");
         $Con=Conectar();
-        $SQL="SELECT * FROM Inventario";
+        $SQL="SELECT * FROM Citas";
         $Result=Ejecutar($Con,$SQL);
         
         ///Crear Tabla
