@@ -23,6 +23,7 @@
 					<div class="dropdown-content">
 						<a href="../Taller/AdminCitasTalller.php" class="dropdown-link">Citas</a>
 						<a href="../Taller/AdminInvTaller.php" class="dropdown-link">Inventario</a>
+						<a href="../Taller/AgregarInventario.php" class="dropdown-link">Agregar Inventario</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -31,7 +32,6 @@
 					</div>
 					<div class="dropdown-content">
                         <a href="../Ventas/AdminVentas.php" class="dropdown-link">Lista de Ventas</a>
-                        <a href="../Ventas/AdminRegistrarVentas.php" class="dropdown-link">Nueva Venta</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -40,8 +40,8 @@
 					</div>
 					<div class="dropdown-content">
 						<a href="../Admin/FVehiculos.html" class="dropdown-link">Agregar Autos</a>
-                        <a href="../Admin/Autos.php" class="dropdown-link">Modificar Autos</a>
-                        <a href="../Admin/FUsuarios.html" class="dropdown-link">Empleados</a>
+                        <a href="../Admin/Autos.php" class="dropdown-link">Inventario Autos</a>
+                        <a href="../Admin/Usuarios.php" class="dropdown-link">Empleados</a>
 					</div>
 				</div>
 			</nav>

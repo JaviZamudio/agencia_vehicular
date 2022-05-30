@@ -1,4 +1,10 @@
 <?php
+	// Autenticacion
+    include("../login/auth.php");
+    authAdmin();
+?>
+
+<?php
     $Numero = $_GET['Numero'];
     //Formar la instrucción SQL
     $SQL= "DELETE FROM Inventario WHERE IdPieza ='$Numero';";
@@ -9,9 +15,15 @@
     $Con=Conectar();
     $Result=Ejecutar($Con,$SQL);
 
-    //Mostrar registros eliminados
-    $ContadorRegistrosEliminados=mysqli_affected_rows($Con);
-    print("Registros Eliminados = ".$ContadorRegistrosEliminados);
+    if($Result){
+        print("<script>alert('Pieza Eliminada');</script>");
+        print("<script>window.location='./Inventario.php';</script>");
+    }
+    else{
+        print("<script>alert('Error al eliminar');</script>");
+        print("<script>window.location='./Inventario.php';</script>");
+    }
+
     Cerrar($Con);
 
 ?>

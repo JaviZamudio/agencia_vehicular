@@ -1,4 +1,8 @@
 <?php
+    // Autenticacion
+    include("../login/auth.php");
+    authTaller();
+
     $IdCitas = $_POST['IdCitas'];
     $Usuario = $_POST['Usuario'];
     $FechaEntrada = $_POST['FechaEntrada'];
@@ -32,5 +36,15 @@
     include("Conexion.php");
     $Con=Conectar();
     $Result=Ejecutar($Con,$SQL);
+
+    if($Result){
+        print("<script>alert('Cita Agregada');</script>");
+        print("<script>window.location='./Citas.php';</script>");
+    }
+    else{
+        print("<script>alert('Error al agregar');</script>");
+        print("<script>window.location='./Citas.php';</script>");
+    }
+
     Cerrar($Con);
 ?>

@@ -17,11 +17,11 @@
 			</div>
 			<nav class="nav">
 				<div class="dropdown">
-					<a href="../Ventas/Ventas.php">
+					<a href="../Ventas/RegistrarVentas.php">
 						Ventas
 					</a>
 				</div>
-				<div class="dropdown" href="../Ventas/Autos.php">
+				<div class="dropdown" href="../Ventas/InventarioAutos.php">
 					<a>
 						Autos
 					</a>

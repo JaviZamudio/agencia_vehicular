@@ -1,5 +1,8 @@
 <?php
 
+    include("../login/auth.php");
+	authAdmin();
+
     $Id=$_POST['Id'];
     $Imagen=$_POST['Imagen'];
     $Marca=$_POST['Marca'];
@@ -45,6 +48,16 @@
     include("Conexiones.php");
     $Con=Conectar();
     $Result=Ejecutar($Con,$SQL);
+
+    if($Result){
+        print("<script>alert('Vehiculo Creado');</script>");
+        print("<script>window.location='./Autos.php';</script>");
+    }
+    else{
+        print("<script>alert('Error al crear');</script>");
+        print("<script>window.location='./Autos.php';</script>");
+    }
+
     Cerrar($Con);
 
 ?>

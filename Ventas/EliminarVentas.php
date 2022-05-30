@@ -1,13 +1,13 @@
 <?php
 	// Autenticacion
     include("../login/auth.php");
-    authAdmin();
+    authUsuario);
 ?>
 
 <?php
-    $Numero = $_GET['Numero'];
+    $IdVenta = $_GET['IdVenta'];
     //Formar la instrucción SQL
-    $SQL= "DELETE FROM Citas WHERE IdCitas ='$Numero';";
+    $SQL= "DELETE FROM Ventas WHERE IdVenta ='$IdVenta';";
 
 
     //Enviar Instrucción al SMDB
@@ -16,12 +16,12 @@
     $Result=Ejecutar($Con,$SQL);
 
     if($Result){
-        print("<script>alert('Cita Eliminada');</script>");
-        print("<script>window.location='./Citas.php';</script>");
+        print("<script>alert('Venta Eliminada');</script>");
+        print("<script>window.location='./IVentas.php';</script>");
     }
     else{
         print("<script>alert('Error al eliminar');</script>");
-        print("<script>window.location='./Citas.php';</script>");
+        print("<script>window.location='./IVentas.php';</script>");
     }
     
     Cerrar($Con);

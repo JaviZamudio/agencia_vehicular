@@ -1,6 +1,6 @@
 <?php
     include("../login/auth.php");
-	authAdmin();
+	authUsuario();
 ?>
 <html> 
 	<head>
@@ -12,22 +12,31 @@
         
         include("./Conexiones.php");
         $Con=Conectar();
-        $SQL="SELECT * FROM Ventas";
+        $SQL="SELECT * FROM Vehiculos";
         $Result=Ejecutar($Con,$SQL);
         
         ///Crear Tabla
         echo '<table border=1><tr>';
         echo '<th>'.'Id'.'</th>';
-        echo '<th>'.'Usuario'.'</th>';
-        echo '<th>'.'Auto'.'</th>';
-        echo '<th>'.'Nombre del Cliente'.'</th>';
-        echo '<th>'.'Fecha'.'</th>';
-        echo '<th>'.'Domicilio'.'</th>';
-        echo '<th>'.'Correo'.'</th>';
-        echo '<th>'.'Telefono'.'</th>';
-        echo '<th>'.'RFC'.'</th>';
-        echo '<th>'.'CURP'.'</th>';
-        echo '<th>'.'Monto'.'</th>';
+        echo '<th>'.'Imagen'.'</th>';
+        echo '<th>'.'Marca'.'</th>';
+        echo '<th>'.'Linea'.'</th>';
+        echo '<th>'.'Clase'.'</th>';
+        echo '<th>'.'Modelo'.'</th>';
+        echo '<th>'.'NumSerie'.'</th>';
+        echo '<th>'.'Tipo'.'</th>';
+        echo '<th>'.'Capacidad'.'</th>';
+        echo '<th>'.'Combustible'.'</th>';
+        echo '<th>'.'Origen'.'</th>';
+        echo '<th>'.'Color'.'</th>';
+        echo '<th>'.'Cilindros'.'</th>';
+        echo '<th>'.'Puertas'.'</th>';
+        echo '<th>'.'Asientos'.'</th>';
+        echo '<th>'.'Transmision'.'</th>';
+        echo '<th>'.'Precio'.'</th>';
+        echo '<th>'.'Eliminar'.'</th>';
+        echo '<th>'.'Actualizar'.'</th>';
+
         echo '</tr>';
         for($F = 0; $F < mysqli_num_rows($Result); $F++)
         {
@@ -44,6 +53,12 @@
             echo '<td>'.$Fila[8].'</td>';
             echo '<td>'.$Fila[9].'</td>';
             echo '<td>'.$Fila[10].'</td>';
+            echo '<td>'.$Fila[11].'</td>';
+            echo '<td>'.$Fila[12].'</td>';
+            echo '<td>'.$Fila[13].'</td>';
+            echo '<td>'.$Fila[14].'</td>';
+            echo '<td>'.$Fila[15].'</td>';
+            echo '<td>'.$Fila[16].'</td>';
             echo '<td>'.'<a href="EliminarAuto.php?Id='.$Fila[0].'">Eliminar</a>'.'</td>';
             echo '<td>'.'<a href="ActualizarAuto.php?Id='.$Fila[0].'">Actualizar</a>'.'</td>';
             echo '</tr>';

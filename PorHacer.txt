@@ -1,8 +1,29 @@
 Falta:
-    ventas para admin y usuario
-    - menu de inventario para Taller
-    - Citas para Admin y Taller
+    Headers
+        Modificar Header en cada Menú
+        header en cada pagina
+        incluir estilos en cada pagina
+    
+    Corregir formularios
+        h2 para el titulo
+        sin brs
+        sin ps
+        poner body y head
+        agregar el alert de estado
 
-    - Autenticacion en cada pagina
-    - Header en cada pagina
-    - Modificar Header en cada Menú
+    Ventas:
+        ventas para admin y usuario
+        menu de autos para usuario
+
+    Autenticacion
+        Autenticacion en cada pagina
+
+    Autoincrement:
+        quitar id de cada formulario
+
+
+documentacion:
+    poner empresa primero
+    despues poner el problema
+    "se anexa documento" de manual t diccionario
+    pruebas
