@@ -20,12 +20,17 @@
 					<div class="dropdown-title">
 						Citas
 						<a href="../Admin/CitasTaller.html" class="dropdown-link">Mostrar Citas</a>
-                        <a href="../Admin/AgregarCitas.php" class="dropdown-link">Agregar Citas</a>
+            <a href="../Admin/AgregarCitas.php" class="dropdown-link">Agregar Citas</a>
 					</div>
 				</div>
 				<div class="dropdown">
 					<a href="../Taller/InvTaller.php">
 						Inventario
+					</a>
+				</div>
+				<div class="dropdown" href="../Taller/CitasTaller.php">
+					<a>
+						Citas
 					</a>
 				</div>
 			</nav>
