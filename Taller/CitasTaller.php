@@ -1,9 +1,4 @@
 <?php
-    session_start();
-    if(isset($_SESSION['Bandera']) && $_SESSION['Bandera']==1 && $_SESSION['Tipo']=="A"){
-?>
-
-<?php
         
         include("./Conexiones.php");
         $Con=Conectar();
@@ -42,13 +37,7 @@
         }
         echo '</table>';
         Cerrar($Con);    
-    }else{
-        // echo "<script>alert($_SESSION[''])</script>"
-        header("Location: ../login/FAcceso.html");
-    }
 
 ?>
-
-        </div>
 	</body>
 </html>

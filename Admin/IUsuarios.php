@@ -1,5 +1,8 @@
 <?php
 
+    include("../login/auth.php");
+    authAdmin();
+    
     $Id=$_POST['Id'];
     $Usuario=$_POST['Usuario'];
     $Password=$_POST['Password'];
@@ -19,12 +22,21 @@
     //Formar la instruccion SQL
     $SQL="INSERT INTO Vehiculos (Id,Usuario,Password,Nombre,TipoUsuario,Correo,NumTelefono) 
     VALUES('$Id','$Usuario','$Password','$Nombre','$TipoUsuario','$Correo','$NumTelefono')";
-    print($SQL);
 
     //Enviar instruccion al SMBD
     include("Conexiones.php");
     $Con=Conectar();
     $Result=Ejecutar($Con,$SQL);
+
+    if($Result){
+        print("<script>alert('Usuario Creado');</script>");
+        print("<script>window.location='./Autos.php';</script>");
+    }
+    else{
+        print("<script>alert('Error al crear');</script>");
+        print("<script>window.location='./Autos.php';</script>");
+    }
+
     Cerrar($Con);
 
 ?>

@@ -1,5 +1,10 @@
 <?php
+	// AUTENTICACION
+	include("../login/auth.php");
+	authAdmin();
+
 	$Id=$_REQUEST['Id'];
+
 	include("../Admin/Conexiones.php");
 	$Con=Conectar();
 	$SQL="SELECT * FROM Vehiculos WHERE Id = '$Id';";
@@ -9,8 +14,16 @@
 ?>
 
 <html>
-<link rel="stylesheet" href="../css/Forms.css">
-<form method="post" action="../Admin/ActualizarAuto.php">
+<head>
+	<!-- Estilos -->
+	<link rel="stylesheet" href="../css/Forms.css">
+	<link rel="stylesheet" href="../css/Header.css">
+</head>
+<body>
+	<!-- HEADER -->
+
+	<!-- FORMULARIO -->
+	<form method="post" action="../Admin/ActualizarAuto.php">
 	<h2>FORMULARIO DE VEHICULOS</h2>
 
 	<label> Id </label>
@@ -63,10 +76,9 @@
     
 	<label>Precio</label>
 	<input type="number" id="Precio" value="<?php print($Fila[16]); ?>" required="required" name="Precio"></input>
-
+	
 	<input type="submit">
 </form>
-</html>
 
 <?php
 	if(isset($_POST['Marca'])){
@@ -87,7 +99,7 @@
         $Asientos=$_POST['Asientos'];
         $Transmision=$_POST['Transmision'];
         $Precio=$_POST['Precio'];
-
+		
 		$Con=Conectar();
 		$SQL="UPDATE Vehiculos SET Marca='$Marca',
 		Imagen='$Imagen', Marca='$Marca',
@@ -98,7 +110,17 @@
         Asientos='$Asientos',Transmision='$Transmision',Precio='$Precio'
         WHERE Id='$Id';";
 		$Result=Ejecutar($Con,$SQL);
-		print("Registros actualizados = ".mysqli_affected_rows($Con));
+		if($Result){
+			print("<script>alert('Vehiculo Actualizado');</script>");
+			print("<script>window.location='./Autos.php';</script>");
+		}
+		else{
+			print("<script>alert('Error al actualizar');</script>");
+			print("<script>window.location='./Autos.php';</script>");
+		}
 		Cerrar($Con);
 	}
-?>
+	?>
+
+</body>
+</html>

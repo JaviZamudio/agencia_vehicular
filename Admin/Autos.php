@@ -1,111 +1,18 @@
 <?php
-    session_start();
-    if(isset($_SESSION['Bandera']) && $_SESSION['Bandera']==1 && $_SESSION['Tipo']=="A"){
+	// Autenticacion
+    include("../login/auth.php");
+	authAdmin();
 ?>
 <html> 
-<link rel="stylesheet" href="styles/style.css" type="text/css">
-    <label></label>
-    <head>
-
-    <link rel="stylesheet" href="../css/Header.css">
-
-		<title></title>
-		<style type="text/css">
-			
-			* {
-				margin:0px;
-				padding:0px;
-			}
-			
-			#header {
-				margin: auto;
-				width: 700px;
-				font-family:Arial, Helvetica, sans-serif;
-
-			}
-			
-			ul, ol {
-				list-style:none;
-			}
-			
-			.nav > li {
-				float:left;
-			}
-			
-			.nav li a {
-				background-color:#000;
-				color:#fff;
-				text-decoration:none;
-				padding:10px 12px;
-				display:block;
-			}
-			
-			.nav li a:hover {
-				background-color:#434343;
-			}
-			
-			.nav li ul {
-				display:none;
-				position:absolute;
-				min-width:140px;
-			}
-			
-			.nav li:hover > ul {
-				display:block;
-			}
-			
-			.nav li ul li {
-				position:relative;
-			}
-			
-			.nav li ul li ul {
-				right:-140px;
-				top:0px;
-			}
-			
-		</style>
+	<head>
+		<!-- ESTILOS -->
+		<link rel="stylesheet" href="styles/style.css" type="text/css">
+	    <link rel="stylesheet" href="../css/Header.css">
 	</head>
 	<body>
-		<div class="header">
-			<div class="header-title">	
-				<img src="../images/logo.png" alt="">
-				<h1>Agencia Vehicular</h1>
-			</div>
-			<nav class="nav">
-				<div class="dropdown">
-					<div class="dropdown-title">
-						Taller
-					</div>
-					<div class="dropdown-content">
-						<a href="../Taller/AdminCitasTalller.php" class="dropdown-link">Citas</a>
-						<a href="../Taller/AdminInvTaller.php" class="dropdown-link">Inventario</a>
-					</div>
-				</div>
-				<div class="dropdown">
-					<div class="dropdown-title">
-						Ventas
-					</div>
-					<div class="dropdown-content">
-                        <a href="../Ventas/AdminVentas.php" class="dropdown-link">Lista de Ventas</a>
-                        <a href="../Ventas/AdminRegistrarVentas.php" class="dropdown-link">Nueva Venta</a>
-					</div>
-				</div>
-				<div class="dropdown">
-					<div class="dropdown-title">
-						Registros
-					</div>
-					<div class="dropdown-content">
-						<a href="../Admin/FVehiculos.html" class="dropdown-link">Agregar Autos</a>
-                        <a href="../Admin/Autos.php" class="dropdown-link">Modificar Autos</a>
-                        <a href="../Admin/FUsuarios.html" class="dropdown-link">Agregar Usuario</a>
-					</div>
-				</div>
-			</nav>
-		</div>
-        <br><br><br>
-        <div>
+		<!-- HEADER -->
 
-        </div>
+		<!-- TABLA DE RESULTADOS -->
 <?php
         
         include("./Conexiones.php");
@@ -163,13 +70,8 @@
         }
         echo '</table>';
         Cerrar($Con);    
-    }else{
-        // echo "<script>alert($_SESSION[''])</script>"
-        header("Location: ../login/FAcceso.html");
-    }
 
 ?>
 
-        </div>
 	</body>
 </html>

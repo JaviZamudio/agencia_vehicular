@@ -1,4 +1,8 @@
 <?php
+    // Autenticacion
+    include("../login/auth.php");
+    authAdmin();
+
     $IdPieza = $_POST['IdVehiculo'];
     $Pieza = $_POST['Marca'];
     $Tipo = $_POST['Linea'];
@@ -20,5 +24,15 @@
     include("Conexion.php");
     $Con=Conectar();
     $Result=Ejecutar($Con,$SQL);
+
+    if($Result){
+        print("<script>alert('Pieza Agregada');</script>");
+        print("<script>window.location='./Inventario.php';</script>");
+    }
+    else{
+        print("<script>alert('Error al agregar');</script>");
+        print("<script>window.location='./Inventario.php';</script>");
+    }
+
     Cerrar($Con);
 ?>

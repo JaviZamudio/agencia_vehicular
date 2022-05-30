@@ -1,4 +1,8 @@
 <?php
+	//AUTENTICACION
+	include("../login/auth.php");
+	authAdmin();
+
 	$Id=$_REQUEST['Id'];
 	include("../Admin/Conexiones.php");
 	$Con=Conectar();
@@ -9,9 +13,17 @@
 ?>
 
 <html>
+<head>
+	<!-- Estilos -->
+	<link rel="stylesheet" href="../css/Forms.css">
+	<link rel="stylesheet" href="../css/Header.css">
+</head>
+<body>
+	<!-- HEADER -->
+
+	<!-- FORMULARIO -->
 <form method="post" action="../Admin/ActualizarEmpleado.php">
-	<label>FORMULARIO DE VEHICULOS</label>
-	<p></p>
+	<h2>FORMULARIO DE VEHICULOS</h2>
 
 	<label>Id</label>
 	<input type="number" id="Id" value="<?php print($Fila[0]); ?>" required="required" name="Id"></input>
@@ -37,7 +49,7 @@
 	<input type="submit">
 
 </form>
-</html>
+
 
 <?php
 	if(isset($_POST['Marca'])){
@@ -56,7 +68,16 @@
 		NumTelefono='$NumTelefono'
         WHERE Id='$Id';";
 		$Result=Ejecutar($Con,$SQL);
-		print("Registros actualizados = ".mysqli_affected_rows($Con));
+		if($Result){
+			print("<script>alert('Empleado Actualizado');</script>");
+			print("<script>window.location='./Usuarios.php';</script>");
+		}
+		else{
+			print("<script>alert('Error al actualizar');</script>");
+			print("<script>window.location='./Usuarios.php';</script>");
+		}
 		Cerrar($Con);
 	}
 ?>
+</body>
+</html>

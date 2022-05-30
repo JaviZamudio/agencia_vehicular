@@ -1,8 +1,1 @@
 Falta:
-
-    - Autenticacion en cada pagina
-    - Header en cada pagina
-    - Modificar Header en cada Menú
-
-    -Autoincrement en Citas
-    -Autocompletar en Agregar Citas (Usuario)
