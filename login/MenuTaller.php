@@ -17,13 +17,13 @@
 			</div>
 			<nav class="nav">
 				<div class="dropdown">
-					<a href="../Taller/CitasTaller.php">
-						Citas
+					<a href="../Taller/InvTaller.php">
+						Inventario
 					</a>
 				</div>
-				<div class="dropdown">
-					<a href="../Taller/AdminInvTaller.php">
-						Inventario
+				<div class="dropdown" href="../Taller/CitasTaller.php">
+					<a>
+						Citas
 					</a>
 				</div>
 			</nav>
